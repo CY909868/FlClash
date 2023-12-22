@@ -337,7 +337,7 @@ class _ConfigFragmentState extends State<ConfigFragment> {
 
   Widget _buildMoreSection() {
     final items = [
-      if (false)
+      if (true)
         Selector<ClashConfig, bool>(
           selector: (_, clashConfig) => clashConfig.tun.enable,
           builder: (_, tunEnable, __) {
