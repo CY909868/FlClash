@@ -12,10 +12,7 @@ enum PlatformType {
   macos,
 }
 
-enum Arch {
-  amd64,
-  arm64,
-}
+enum Arch { amd64, arm64, arm }
 
 class BuildLibItem {
   PlatformType platform;
@@ -63,6 +60,11 @@ class Build {
           platform: PlatformType.windows,
           arch: Arch.amd64,
           archName: 'amd64',
+        ),
+        BuildLibItem(
+          platform: PlatformType.android,
+          arch: Arch.arm,
+          archName: 'armeabi-v7a',
         ),
         BuildLibItem(
           platform: PlatformType.android,
@@ -357,6 +359,7 @@ class BuildCommand extends Command {
         break;
       case PlatformType.android:
         final targetMap = {
+          Arch.arm: "android-arm",
           Arch.amd64: "android-x64",
           Arch.arm64: "android-arm64"
         };
