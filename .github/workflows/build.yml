@@ -13,18 +13,29 @@ jobs:
         include:
 #          - platform: android
 #            os: ubuntu-latest
-#          - platform: windows
-#            os: windows-latest
+          - platform: windows
+            os: windows-latest
 #          - platform: linux
 #            os: ubuntu-latest
           - platform: macos
-            os: macos-13
+            os: macos-latest
 
     steps:
+      - name: Check Matrix
+        run: |
+            echo "Running on ${{ matrix.os }}"
+            echo "Arch: ${{ runner.arch }}"
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
+      - name: Setup  MinGW
+        if: startsWith(matrix.platform,'windows')
+        uses: egor-tensin/setup-mingw@v2
+        with:
+          platform: x64
 
       - name: Setup JAVA
         if: startsWith(matrix.platform,'android')
