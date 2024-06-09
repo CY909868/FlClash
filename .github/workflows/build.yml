@@ -18,14 +18,14 @@ jobs:
 #          - platform: linux
 #            os: ubuntu-latest
           - platform: macos
-            os: macos-14-large
+            os: macos-latest-large
 
     steps:
       - name: Check Matrix
         run: |
             echo "Running on ${{ matrix.os }}"
             echo "Arch: ${{ runner.arch }}"
-            echo "gcc --version"
+            gcc --version
 
       - name: Checkout
         uses: actions/checkout@v4
