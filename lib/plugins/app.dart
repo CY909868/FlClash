@@ -63,9 +63,9 @@ class App {
     });
   }
 
-  Future<String?> getPackageName(Metadata metadata) async {
-    return await methodChannel?.invokeMethod<String>("getPackageName", {
-      "data": json.encode(metadata),
+  Future<String?> resolverProcess(Process process) async {
+    return await methodChannel?.invokeMethod<String>("resolverProcess", {
+      "data": json.encode(process),
     });
   }
 }

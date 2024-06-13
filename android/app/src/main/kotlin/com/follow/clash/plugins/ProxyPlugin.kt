@@ -95,10 +95,6 @@ class ProxyPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwar
             }
         }
 
-        "GetRunTimeStamp" -> {
-            result.success(GlobalState.runTime?.time)
-        }
-
         "startForeground" -> {
             title = call.argument<String>("title") as String
             content = call.argument<String>("content") as String
@@ -124,7 +120,6 @@ class ProxyPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwar
         if (GlobalState.runState.value == RunState.START) return;
         flClashVpnService?.start(port, props)
         GlobalState.runState.value = RunState.START
-        GlobalState.runTime = Date()
         startAfter()
     }
 
@@ -133,7 +128,6 @@ class ProxyPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwar
         flClashVpnService?.stop()
         unbindService()
         GlobalState.runState.value = RunState.STOP;
-        GlobalState.runTime = null;
     }
 
     @SuppressLint("ForegroundServiceType")

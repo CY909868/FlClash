@@ -2,12 +2,14 @@ package main
 
 import "C"
 import (
+	"github.com/metacubex/mihomo/adapter"
 	"github.com/metacubex/mihomo/adapter/inbound"
 	ap "github.com/metacubex/mihomo/adapter/provider"
 	"github.com/metacubex/mihomo/component/dialer"
 	"github.com/metacubex/mihomo/component/process"
 	"github.com/metacubex/mihomo/component/resolver"
 	"github.com/metacubex/mihomo/config"
+	"github.com/metacubex/mihomo/constant"
 	"github.com/metacubex/mihomo/dns"
 	"github.com/metacubex/mihomo/hub"
 	"github.com/metacubex/mihomo/hub/executor"
@@ -82,10 +84,13 @@ type Delay struct {
 }
 
 type Process struct {
-	Uid     uint32 `json:"uid"`
-	Network string `json:"network"`
-	Source  string `json:"source"`
-	Target  string `json:"target"`
+	Id       int64             `json:"id"`
+	Metadata constant.Metadata `json:"metadata"`
+}
+
+type ProcessMapItem struct {
+	Id    int64   `json:"id"`
+	Value *string `json:"value"`
 }
 
 type Now struct {
@@ -367,6 +372,7 @@ func patchConfig(general *config.General) {
 	tunnel.SetSniffing(general.Sniffing)
 	dialer.SetTcpConcurrent(general.TCPConcurrent)
 	dialer.DefaultInterface.Store(general.Interface)
+	adapter.UnifiedDelay.Store(general.UnifiedDelay)
 	listener.ReCreateHTTP(general.Port, tunnel.Tunnel)
 	listener.ReCreateSocks(general.SocksPort, tunnel.Tunnel)
 	listener.ReCreateRedir(general.RedirPort, tunnel.Tunnel)

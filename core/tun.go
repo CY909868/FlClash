@@ -8,6 +8,7 @@ import (
 	"github.com/metacubex/mihomo/component/dialer"
 	"github.com/metacubex/mihomo/log"
 	"golang.org/x/sync/semaphore"
+	"strconv"
 	"sync"
 	"syscall"
 	"time"
@@ -15,11 +16,16 @@ import (
 
 var tunLock sync.Mutex
 var tun *t.Tun
+var runTime *time.Time
 
 //export startTUN
 func startTUN(fd C.int) {
+	tunLock.Lock()
+
+	now := time.Now()
+	runTime = &now
+
 	go func() {
-		tunLock.Lock()
 		defer tunLock.Unlock()
 
 		if tun != nil {
@@ -35,8 +41,6 @@ func startTUN(fd C.int) {
 
 		closer, err := t.Start(f, gateway, portal, dns)
 
-		applyConfig(true)
-
 		if err != nil {
 			log.Errorln("startTUN error: %v", err)
 			tempTun.Close()
@@ -45,29 +49,34 @@ func startTUN(fd C.int) {
 		tempTun.Closer = closer
 
 		tun = tempTun
+
+		applyConfig(true)
 	}()
 }
 
-//export updateMarkSocketPort
-func updateMarkSocketPort(markSocketPort C.longlong) bool {
-	tunLock.Lock()
-	defer tunLock.Unlock()
-	//if tun != nil {
-	//	tun.MarkSocketPort = int64(markSocketPort)
-	//}
-	return true
+//export getRunTime
+func getRunTime() *C.char {
+	if runTime == nil {
+		return C.CString("")
+	}
+	return C.CString(strconv.FormatInt(runTime.UnixMilli(), 10))
 }
 
 //export stopTun
 func stopTun() {
+	tunLock.Lock()
+
+	runTime = nil
+
 	go func() {
-		tunLock.Lock()
 		defer tunLock.Unlock()
 
 		if tun != nil {
 			tun.Close()
-			applyConfig(true)
+
 			tun = nil
+
+			applyConfig(true)
 		}
 	}()
 }

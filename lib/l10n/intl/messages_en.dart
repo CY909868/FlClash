@@ -176,6 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "nullLogsDesc": MessageLookupByLibrary.simpleMessage("No logs"),
         "nullProfileDesc": MessageLookupByLibrary.simpleMessage(
             "No profile, Please add a profile"),
+        "nullRequestsDesc":
+            MessageLookupByLibrary.simpleMessage("No proxy or no request"),
         "other": MessageLookupByLibrary.simpleMessage("Other"),
         "outboundMode": MessageLookupByLibrary.simpleMessage("Outbound mode"),
         "override": MessageLookupByLibrary.simpleMessage("Override"),
@@ -225,6 +227,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Only recovery profiles"),
         "recoverySuccess":
             MessageLookupByLibrary.simpleMessage("Recovery success"),
+        "requests": MessageLookupByLibrary.simpleMessage("Requests"),
+        "requestsDesc": MessageLookupByLibrary.simpleMessage(
+            "View recently requested data"),
         "resources": MessageLookupByLibrary.simpleMessage("Resources"),
         "resourcesDesc": MessageLookupByLibrary.simpleMessage(
             "External resource related info"),
