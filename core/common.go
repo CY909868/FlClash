@@ -396,6 +396,8 @@ func applyConfig(isPatch bool) {
 	if isPatch {
 		patchConfig(cfg.General)
 	} else {
+		runtime.GC()
+		executor.Shutdown()
 		hub.UltraApplyConfig(cfg, true)
 	}
 }

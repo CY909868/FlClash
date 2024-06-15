@@ -16,7 +16,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.follow.clash.GlobalState
 import com.follow.clash.RunState
-import com.follow.clash.models.AccessControl
 import com.follow.clash.models.Props
 import com.follow.clash.services.FlClashVpnService
 import com.google.gson.Gson
@@ -26,7 +25,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
-import java.util.Date
 
 
 class ProxyPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {

@@ -128,8 +128,11 @@ class AppPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware 
                             metadata.destinationIP.ifEmpty { metadata.host },
                             metadata.destinationPort
                         )
-                        val uid =
+                        val uid = try {
                             connectivity?.getConnectionOwnerUid(protocol, src, dst)
+                        } catch (_: Exception) {
+                            null
+                        }
                         if (uid == null || uid == -1) {
                             result.success(null)
                             return@withContext
@@ -156,10 +159,10 @@ class AppPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware 
     private suspend fun getPackageIcon(packageName: String): String? {
         val packageManager = context?.packageManager
         if (iconMap[packageName] == null) {
-            try {
-                iconMap[packageName] = packageManager?.getApplicationIcon(packageName)?.getBase64()
+            iconMap[packageName] = try {
+                packageManager?.getApplicationIcon(packageName)?.getBase64()
             } catch (_: Exception) {
-                iconMap[packageName] = null
+                null
             }
 
         }

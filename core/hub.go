@@ -95,7 +95,6 @@ func updateConfig(s *C.char, port C.longlong) {
 		}
 		prof := decorationConfig(params.ProfilePath, *params.Config, *params.IsCompatible)
 		currentConfig = prof
-		runtime.GC()
 		if *params.IsPatch {
 			applyConfig(true)
 		} else {
