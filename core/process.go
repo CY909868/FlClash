@@ -22,6 +22,9 @@ var processMap = make(map[int64]*string)
 
 func init() {
 	process.DefaultPackageNameResolver = func(metadata *constant.Metadata) (string, error) {
+		if metadata == nil {
+			return "", process.ErrInvalidNetwork
+		}
 		id := atomic.AddInt64(&counter, 1)
 
 		timeout := time.After(200 * time.Millisecond)
