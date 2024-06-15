@@ -10,7 +10,6 @@ import (
 	"github.com/metacubex/mihomo/component/resolver"
 	"github.com/metacubex/mihomo/config"
 	"github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/dns"
 	"github.com/metacubex/mihomo/hub"
 	"github.com/metacubex/mihomo/hub/executor"
 	"github.com/metacubex/mihomo/hub/route"
@@ -349,11 +348,11 @@ func overwriteConfig(targetConfig *config.RawConfig, patchConfig config.RawConfi
 	if targetConfig.DNS.Enable == false {
 		targetConfig.DNS = patchConfig.DNS
 	}
-	if runtime.GOOS == "android" {
-		targetConfig.DNS.NameServer = append(targetConfig.DNS.NameServer, "dhcp://"+dns.SystemDNSPlaceholder)
-	} else if runtime.GOOS == "windows" {
-		targetConfig.DNS.NameServer = append(targetConfig.DNS.NameServer, dns.SystemDNSPlaceholder)
-	}
+	//if runtime.GOOS == "android" {
+	//	targetConfig.DNS.NameServer = append(targetConfig.DNS.NameServer, "dhcp://"+dns.SystemDNSPlaceholder)
+	//} else if runtime.GOOS == "windows" {
+	//	targetConfig.DNS.NameServer = append(targetConfig.DNS.NameServer, dns.SystemDNSPlaceholder)
+	//}
 	if compatible == false {
 		targetConfig.ProxyProvider = make(map[string]map[string]any)
 		targetConfig.RuleProvider = make(map[string]map[string]any)
