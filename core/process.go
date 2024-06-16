@@ -9,14 +9,11 @@ import (
 	"errors"
 	"github.com/metacubex/mihomo/component/process"
 	"github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
 	"sync/atomic"
 	"time"
 )
 
-var (
-	counter int64
-)
+var counter int64 = 0
 
 var processMap = make(map[int64]*string)
 
@@ -44,16 +41,15 @@ func init() {
 			case <-timeout:
 				return "", errors.New("package resolver timeout")
 			default:
-				value, exists := processMap[counter]
+				value, exists := processMap[id]
 				if exists {
 					if value != nil {
-						log.Infoln("[PKG] %s --> %s by [%s]", metadata.SourceAddress(), metadata.RemoteAddress(), *value)
 						return *value, nil
 					} else {
 						return "", process.ErrInvalidNetwork
 					}
 				}
-				time.Sleep(10 * time.Millisecond)
+				time.Sleep(20 * time.Millisecond)
 			}
 		}
 	}
@@ -67,6 +63,8 @@ func setProcessMap(s *C.char) {
 		err := json.Unmarshal([]byte(paramsString), processMapItem)
 		if err == nil {
 			processMap[processMapItem.Id] = processMapItem.Value
+		} else {
+			processMap[processMapItem.Id] = nil
 		}
 	}()
 }

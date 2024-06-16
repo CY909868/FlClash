@@ -16,15 +16,21 @@ import (
 	"unsafe"
 )
 
+var isInit bool = false
+
 func InitDartApi(api unsafe.Pointer) {
 	if C.Dart_InitializeApiDL(api) != 0 {
 		panic("failed to create dart bridge")
 	} else {
 		fmt.Println("Dart Api DL is initialized")
+		isInit = true
 	}
 }
 
 func SendToPort(port int64, msg string) {
+	if !isInit {
+		return
+	}
 	var obj C.Dart_CObject
 	obj._type = C.Dart_CObject_kString
 	msgString := C.CString(msg)
