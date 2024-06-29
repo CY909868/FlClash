@@ -115,7 +115,7 @@ class ClashCore {
         final group = proxies[groupName];
         group["all"] = ((group["all"] ?? []) as List)
             .map(
-              (name) => proxies[name],
+              (name) => proxies[name] ?? {},
             )
             .toList();
         return group;
