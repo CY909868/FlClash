@@ -26,7 +26,9 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: mingw64
-          install: mingw-w64-x86_64-gcc
+          install: base-devel mingw-w64-x86_64-toolchain
+          update: true
+        run: echo "export PATH=\"\$PATH:/c/msys64/mingw64/bin\"" >> $GITHUB_ENV
 
       - name: Check Matrix
         run: |
