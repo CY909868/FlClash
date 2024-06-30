@@ -28,6 +28,10 @@ jobs:
           msystem: mingw64
           install: base-devel mingw-w64-x86_64-toolchain
           update: true
+
+
+      - name: Set Mingw64 Env
+        if: startsWith(matrix.platform,'windows')
         run: echo "export PATH=\"\$PATH:/c/msys64/mingw64/bin\"" >> $GITHUB_ENV
 
       - name: Check Matrix
