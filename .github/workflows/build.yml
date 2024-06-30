@@ -32,7 +32,9 @@ jobs:
 
       - name: Set Mingw64 Env
         if: startsWith(matrix.platform,'windows')
-        run: echo "export PATH=\"\${PATH}:/c/msys64/mingw64/bin\"" >> $GITHUB_ENV
+        run: |
+          echo "PATH=/c/msys64/mingw64/bin:${{PATH}}" >> $GITHUB_ENV
+          echo "PATH: ${{PATH}}"
 
       - name: Check Matrix
         run: |
