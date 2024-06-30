@@ -26,13 +26,13 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: mingw64
-          install: base-devel mingw-w64-x86_64-toolchain
+          install: mingw-w64-x86_64-gcc
           update: true
 
 
       - name: Set Mingw64 Env
         if: startsWith(matrix.platform,'windows')
-        run: echo "export PATH=\"\$PATH:/c/msys64/mingw64/bin\"" >> $GITHUB_ENV
+        run: echo "export PATH=\"\${PATH}:/c/msys64/mingw64/bin\"" >> $GITHUB_ENV
 
       - name: Check Matrix
         run: |
