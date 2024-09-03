@@ -16,12 +16,12 @@
 
 基于 ClashMeta 的多平台代理客户端，简单易用，开源无广告。
 
-on Desktop:
+在桌面平台上：
 <p style="text-align: center;">
     <img alt="desktop" src="snapshots/desktop.gif">
 </p>
 
-on Mobile:
+在移动平台上：
 <p style="text-align: center;">
     <img alt="mobile" src="snapshots/mobile.gif">
 </p>
@@ -36,7 +36,7 @@ on Mobile:
 
 ☁️ 支持通过 WebDAV 同步数据
 
-✨ 支持一键导入订阅，深色模式
+✨ 支持一键导入订阅、深色模式
 
 ## Download
 
@@ -53,7 +53,7 @@ on Mobile:
    git submodule update --init --recursive
    ```
 
-2. 安装 `Flutter` 以及 `Golang` 环境
+2. 安装 `Flutter` 和 `Golang` 环境
 
 3. 构建应用
 

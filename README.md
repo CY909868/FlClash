@@ -30,13 +30,13 @@ on Mobile:
 
 ✈️ Multi-platform: Android, Windows, macOS and Linux
 
-💻 Adaptive multiple screen sizes, Multiple color themes available
+💻 Adaptive multiple screen sizes, multiple color themes available
 
-💡 Based on Material You Design, [Surfboard](https://github.com/getsurfboard/surfboard)-like UI
+💡 Based on Material You design, [Surfboard](https://github.com/getsurfboard/surfboard)-like UI
 
 ☁️ Supports data sync via WebDAV
 
-✨ Support subscription link, Dark mode
+✨ Support subscription link, dark mode
 
 ## Download
 
@@ -63,7 +63,7 @@ on Mobile:
 
         2. Set `ANDROID_NDK` environment variables
 
-        3. Run Build script
+        3. Run build script
 
            ```bash
            dart .\setup.dart android
