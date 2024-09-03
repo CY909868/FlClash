@@ -57,9 +57,9 @@ on Mobile:
 
 3. Build Application
 
-    - android
+    - Android
 
-        1. Install  `Android SDK` ,  `Android NDK`
+        1. Install `Android SDK` and `Android NDK`
 
         2. Set `ANDROID_NDK` environment variables
 
@@ -69,11 +69,11 @@ on Mobile:
            dart .\setup.dart android
            ```
 
-    - windows
+    - Windows
 
-        1. You need a windows client
+        1. You need a Windows client
 
-        2. Install  `Gcc`，`Inno Setup`
+        2. Install `Gcc` and `Inno Setup`
 
         3. Run build script
 
@@ -81,9 +81,9 @@ on Mobile:
            dart .\setup.dart	
            ```
 
-    - linux
+    - Linux
 
-        1. You need a linux client
+        1. You need a Linux client
 
         2. Run build script
 
@@ -100,11 +100,8 @@ on Mobile:
            ```bash
            dart .\setup.dart	
            ```
-           
 
-    
-
-## Star
+## Star History
 
 The easiest way to support developers is to click on the star (⭐) at the top of the page.
 

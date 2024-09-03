@@ -14,7 +14,7 @@
     </a>
 </p>
 
-基于ClashMeta的多平台代理客户端，简单易用，开源无广告。
+基于 ClashMeta 的多平台代理客户端，简单易用，开源无广告。
 
 on Desktop:
 <p style="text-align: center;">
@@ -28,20 +28,19 @@ on Mobile:
 
 ## Features
 
-✈️ 多平台: Android, Windows, macOS and Linux
+✈️ 多平台：Android、Windows、macOS 和 Linux
 
-💻 自适应多个屏幕尺寸,多种颜色主题可供选择
+💻 自适应多个屏幕尺寸，多种颜色主题可供选择
 
-💡 基本 Material You 设计, 类[Surfboard](https://github.com/getsurfboard/surfboard)用户界面
+💡 基本 Material You 设计，类 [Surfboard](https://github.com/getsurfboard/surfboard) 用户界面
 
-☁️ 支持通过WebDAV同步数据
+☁️ 支持通过 WebDAV 同步数据
 
-✨ 支持一键导入订阅, 深色模式
+✨ 支持一键导入订阅，深色模式
 
 ## Download
 
 <a href="https://chen08209.github.io/FlClash-fdroid-repo/repo?fingerprint=789D6D32668712EF7672F9E58DEEB15FBD6DCEEC5AE7A4371EA72F2AAE8A12FD"><img alt="Get it on F-Droid" src="snapshots/get-it-on-fdroid.svg" width="200px"/></a> <a href="https://github.com/chen08209/FlClash/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
-
 
 ## Contact
 
@@ -58,9 +57,9 @@ on Mobile:
 
 3. 构建应用
 
-    - android
+    - Android
 
-        1. 安装  `Android SDK` ,  `Android NDK`
+        1. 安装 `Android SDK` 和 `Android NDK`
 
         2. 设置 `ANDROID_NDK` 环境变量
 
@@ -70,11 +69,11 @@ on Mobile:
            dart .\setup.dart android
            ```
 
-    - windows
+    - Windows
 
-        1. 你需要一个windows客户端
+        1. 你需要一个 Windows 客户端
 
-        2. 安装 `Gcc`，`Inno Setup`
+        2. 安装 `Gcc` 和 `Inno Setup`
 
         3. 运行构建脚本
 
@@ -82,9 +81,9 @@ on Mobile:
            dart .\setup.dart	
            ```
 
-    - linux
+    - Linux
 
-        1. 你需要一个linux客户端
+        1. 你需要一个 Linux 客户端
 
         2. 运行构建脚本
 
@@ -94,7 +93,7 @@ on Mobile:
 
     - macOS
 
-        1. 你需要一个macOS客户端
+        1. 你需要一个 macOS 客户端
 
         2. 运行构建脚本
 
