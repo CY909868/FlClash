@@ -63,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "autoCheckUpdateDesc": MessageLookupByLibrary.simpleMessage(
             "Auto check for updates when the app starts"),
         "autoCloseConnections":
-            MessageLookupByLibrary.simpleMessage("Auto lose connections"),
+            MessageLookupByLibrary.simpleMessage("Auto close connections"),
         "autoCloseConnectionsDesc": MessageLookupByLibrary.simpleMessage(
             "Auto close connections after change node"),
         "autoLaunch": MessageLookupByLibrary.simpleMessage("AutoLaunch"),
@@ -106,7 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "connections": MessageLookupByLibrary.simpleMessage("Connections"),
         "connectionsDesc": MessageLookupByLibrary.simpleMessage(
             "View current connections data"),
-        "connectivity": MessageLookupByLibrary.simpleMessage("Connectivity："),
+        "connectivity": MessageLookupByLibrary.simpleMessage("Connectivity: "),
         "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "core": MessageLookupByLibrary.simpleMessage("Core"),
         "coreInfo": MessageLookupByLibrary.simpleMessage("Core info"),
@@ -159,8 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "externalLink": MessageLookupByLibrary.simpleMessage("External link"),
         "externalResources":
             MessageLookupByLibrary.simpleMessage("External resources"),
-        "fakeipFilter": MessageLookupByLibrary.simpleMessage("Fakeip filter"),
-        "fakeipRange": MessageLookupByLibrary.simpleMessage("Fakeip range"),
+        "fakeipFilter": MessageLookupByLibrary.simpleMessage("Fake IP filter"),
+        "fakeipRange": MessageLookupByLibrary.simpleMessage("Fake IP range"),
         "fallback": MessageLookupByLibrary.simpleMessage("Fallback"),
         "fallbackDesc":
             MessageLookupByLibrary.simpleMessage("Generally use offshore DNS"),
@@ -183,7 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Geo Low Memory Mode"),
         "geodataLoaderDesc": MessageLookupByLibrary.simpleMessage(
             "Enabling will use the Geo low memory loader"),
-        "geoipCode": MessageLookupByLibrary.simpleMessage("Geoip code"),
+        "geoipCode": MessageLookupByLibrary.simpleMessage("GeoIP code"),
         "global": MessageLookupByLibrary.simpleMessage("Global"),
         "go": MessageLookupByLibrary.simpleMessage("Go"),
         "goDownload": MessageLookupByLibrary.simpleMessage("Go to download"),
@@ -197,7 +197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "intelligentSelected":
             MessageLookupByLibrary.simpleMessage("Intelligent selection"),
         "intranetIP": MessageLookupByLibrary.simpleMessage("Intranet IP"),
-        "ipcidr": MessageLookupByLibrary.simpleMessage("Ipcidr"),
+        "ipcidr": MessageLookupByLibrary.simpleMessage("IP/CIDR"),
         "ipv6Desc": MessageLookupByLibrary.simpleMessage(
             "When turned on it will be able to receive IPv6 traffic"),
         "just": MessageLookupByLibrary.simpleMessage("Just"),
@@ -277,7 +277,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "override": MessageLookupByLibrary.simpleMessage("Override"),
         "overrideDesc": MessageLookupByLibrary.simpleMessage(
             "Override Proxy related config"),
-        "overrideDns": MessageLookupByLibrary.simpleMessage("Override Dns"),
+        "overrideDns": MessageLookupByLibrary.simpleMessage("Override DNS"),
         "overrideDnsDesc": MessageLookupByLibrary.simpleMessage(
             "Turning it on will override the DNS options in the profile"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -292,7 +292,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please upload a valid QR code"),
         "port": MessageLookupByLibrary.simpleMessage("Port"),
         "preferH3Desc": MessageLookupByLibrary.simpleMessage(
-            "Prioritize the use of DOH\'s http/3"),
+            "Prioritize the use of DoH\'s http/3"),
         "preview": MessageLookupByLibrary.simpleMessage("Preview"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "profileAutoUpdateIntervalInvalidValidationDesc":
