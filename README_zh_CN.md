@@ -7,10 +7,10 @@
 ## FlClash
 
 <p style="text-align: left;">
-    <img alt="stars" src="https://img.shields.io/github/stars/chen08209/FlClash?style=flat-square&logo=github"/>
-    <img alt="downloads" src="https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat-square"/>
+    <img alt="stars" src="https://img.shields.io/github/stars/chen08209/FlClash?style=flat&logo=github"/>
+    <img alt="downloads" src="https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat"/>
     <a href="LICENSE">
-        <img alt="license" src="https://img.shields.io/github/license/chen08209/FlClash?style=flat-square"/>
+        <img alt="license" src="https://img.shields.io/github/license/chen08209/FlClash?style=flat"/>
     </a>
 </p>
 
