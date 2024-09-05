@@ -7,10 +7,10 @@
 ## FlClash
 
 <p style="text-align: left;">
-    <img alt="stars" src="https://img.shields.io/github/stars/chen08209/FlClash?style=flat-square&logo=github"/>
-    <img alt="downloads" src="https://img.shields.io/github/downloads/chen08209/FlClash/total"/>
+    <img alt="stars" src="https://img.shields.io/github/stars/chen08209/FlClash?style=flat&logo=github"/>
+    <img alt="downloads" src="https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat"/>
     <a href="LICENSE">
-        <img alt="license" src="https://img.shields.io/github/license/chen08209/FlClash"/>
+        <img alt="license" src="https://img.shields.io/github/license/chen08209/FlClash?style=flat"/>
     </a>
 </p>
 
@@ -30,13 +30,13 @@ on Mobile:
 
 ✈️ Multi-platform: Android, Windows, macOS and Linux
 
-💻 Adaptive multiple screen sizes, Multiple color themes available
+💻 Adaptive multiple screen sizes, multiple color themes available
 
-💡 Based on Material You Design, [Surfboard](https://github.com/getsurfboard/surfboard)-like UI
+💡 Based on Material You design, [Surfboard](https://github.com/getsurfboard/surfboard)-like UI
 
 ☁️ Supports data sync via WebDAV
 
-✨ Support subscription link, Dark mode
+✨ Support subscription link, dark mode
 
 ## Download
 
@@ -57,23 +57,23 @@ on Mobile:
 
 3. Build Application
 
-    - android
+    - Android
 
-        1. Install  `Android SDK` ,  `Android NDK`
+        1. Install `Android SDK` and `Android NDK`
 
         2. Set `ANDROID_NDK` environment variables
 
-        3. Run Build script
+        3. Run build script
 
            ```bash
            dart .\setup.dart android
            ```
 
-    - windows
+    - Windows
 
-        1. You need a windows client
+        1. You need a Windows client
 
-        2. Install  `Gcc`，`Inno Setup`
+        2. Install `Gcc` and `Inno Setup`
 
         3. Run build script
 
@@ -81,9 +81,9 @@ on Mobile:
            dart .\setup.dart	
            ```
 
-    - linux
+    - Linux
 
-        1. You need a linux client
+        1. You need a Linux client
 
         2. Run build script
 
@@ -100,11 +100,8 @@ on Mobile:
            ```bash
            dart .\setup.dart	
            ```
-           
 
-    
-
-## Star
+## Star History
 
 The easiest way to support developers is to click on the star (⭐) at the top of the page.
 
