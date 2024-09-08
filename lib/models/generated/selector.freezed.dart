@@ -1332,7 +1332,7 @@ abstract class _UpdateNavigationsSelector implements UpdateNavigationsSelector {
 }
 
 /// @nodoc
-mixin _$HomeSelectorState {
+mixin _$HomeState {
   String get currentLabel => throw _privateConstructorUsedError;
   List<NavigationItem> get navigationItems =>
       throw _privateConstructorUsedError;
@@ -1340,15 +1340,14 @@ mixin _$HomeSelectorState {
   String? get locale => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeSelectorStateCopyWith<HomeSelectorState> get copyWith =>
+  $HomeStateCopyWith<HomeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeSelectorStateCopyWith<$Res> {
-  factory $HomeSelectorStateCopyWith(
-          HomeSelectorState value, $Res Function(HomeSelectorState) then) =
-      _$HomeSelectorStateCopyWithImpl<$Res, HomeSelectorState>;
+abstract class $HomeStateCopyWith<$Res> {
+  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
+      _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
       {String currentLabel,
@@ -1358,9 +1357,9 @@ abstract class $HomeSelectorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeSelectorStateCopyWithImpl<$Res, $Val extends HomeSelectorState>
-    implements $HomeSelectorStateCopyWith<$Res> {
-  _$HomeSelectorStateCopyWithImpl(this._value, this._then);
+class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
+    implements $HomeStateCopyWith<$Res> {
+  _$HomeStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1397,11 +1396,11 @@ class _$HomeSelectorStateCopyWithImpl<$Res, $Val extends HomeSelectorState>
 }
 
 /// @nodoc
-abstract class _$$HomeSelectorStateImplCopyWith<$Res>
-    implements $HomeSelectorStateCopyWith<$Res> {
-  factory _$$HomeSelectorStateImplCopyWith(_$HomeSelectorStateImpl value,
-          $Res Function(_$HomeSelectorStateImpl) then) =
-      __$$HomeSelectorStateImplCopyWithImpl<$Res>;
+abstract class _$$HomeStateImplCopyWith<$Res>
+    implements $HomeStateCopyWith<$Res> {
+  factory _$$HomeStateImplCopyWith(
+          _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
+      __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1412,11 +1411,11 @@ abstract class _$$HomeSelectorStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HomeSelectorStateImplCopyWithImpl<$Res>
-    extends _$HomeSelectorStateCopyWithImpl<$Res, _$HomeSelectorStateImpl>
-    implements _$$HomeSelectorStateImplCopyWith<$Res> {
-  __$$HomeSelectorStateImplCopyWithImpl(_$HomeSelectorStateImpl _value,
-      $Res Function(_$HomeSelectorStateImpl) _then)
+class __$$HomeStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeStateImpl>
+    implements _$$HomeStateImplCopyWith<$Res> {
+  __$$HomeStateImplCopyWithImpl(
+      _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1427,7 +1426,7 @@ class __$$HomeSelectorStateImplCopyWithImpl<$Res>
     Object? viewMode = null,
     Object? locale = freezed,
   }) {
-    return _then(_$HomeSelectorStateImpl(
+    return _then(_$HomeStateImpl(
       currentLabel: null == currentLabel
           ? _value.currentLabel
           : currentLabel // ignore: cast_nullable_to_non_nullable
@@ -1450,8 +1449,8 @@ class __$$HomeSelectorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeSelectorStateImpl implements _HomeSelectorState {
-  const _$HomeSelectorStateImpl(
+class _$HomeStateImpl implements _HomeState {
+  const _$HomeStateImpl(
       {required this.currentLabel,
       required final List<NavigationItem> navigationItems,
       required this.viewMode,
@@ -1475,14 +1474,14 @@ class _$HomeSelectorStateImpl implements _HomeSelectorState {
 
   @override
   String toString() {
-    return 'HomeSelectorState(currentLabel: $currentLabel, navigationItems: $navigationItems, viewMode: $viewMode, locale: $locale)';
+    return 'HomeState(currentLabel: $currentLabel, navigationItems: $navigationItems, viewMode: $viewMode, locale: $locale)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeSelectorStateImpl &&
+            other is _$HomeStateImpl &&
             (identical(other.currentLabel, currentLabel) ||
                 other.currentLabel == currentLabel) &&
             const DeepCollectionEquality()
@@ -1499,17 +1498,16 @@ class _$HomeSelectorStateImpl implements _HomeSelectorState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeSelectorStateImplCopyWith<_$HomeSelectorStateImpl> get copyWith =>
-      __$$HomeSelectorStateImplCopyWithImpl<_$HomeSelectorStateImpl>(
-          this, _$identity);
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+      __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
 }
 
-abstract class _HomeSelectorState implements HomeSelectorState {
-  const factory _HomeSelectorState(
+abstract class _HomeState implements HomeState {
+  const factory _HomeState(
       {required final String currentLabel,
       required final List<NavigationItem> navigationItems,
       required final ViewMode viewMode,
-      required final String? locale}) = _$HomeSelectorStateImpl;
+      required final String? locale}) = _$HomeStateImpl;
 
   @override
   String get currentLabel;
@@ -1521,34 +1519,33 @@ abstract class _HomeSelectorState implements HomeSelectorState {
   String? get locale;
   @override
   @JsonKey(ignore: true)
-  _$$HomeSelectorStateImplCopyWith<_$HomeSelectorStateImpl> get copyWith =>
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$HomeBodySelectorState {
+mixin _$HomeViewState {
   List<NavigationItem> get navigationItems =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeBodySelectorStateCopyWith<HomeBodySelectorState> get copyWith =>
+  $HomeViewStateCopyWith<HomeViewState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeBodySelectorStateCopyWith<$Res> {
-  factory $HomeBodySelectorStateCopyWith(HomeBodySelectorState value,
-          $Res Function(HomeBodySelectorState) then) =
-      _$HomeBodySelectorStateCopyWithImpl<$Res, HomeBodySelectorState>;
+abstract class $HomeViewStateCopyWith<$Res> {
+  factory $HomeViewStateCopyWith(
+          HomeViewState value, $Res Function(HomeViewState) then) =
+      _$HomeViewStateCopyWithImpl<$Res, HomeViewState>;
   @useResult
   $Res call({List<NavigationItem> navigationItems});
 }
 
 /// @nodoc
-class _$HomeBodySelectorStateCopyWithImpl<$Res,
-        $Val extends HomeBodySelectorState>
-    implements $HomeBodySelectorStateCopyWith<$Res> {
-  _$HomeBodySelectorStateCopyWithImpl(this._value, this._then);
+class _$HomeViewStateCopyWithImpl<$Res, $Val extends HomeViewState>
+    implements $HomeViewStateCopyWith<$Res> {
+  _$HomeViewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1570,24 +1567,22 @@ class _$HomeBodySelectorStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$HomeBodySelectorStateImplCopyWith<$Res>
-    implements $HomeBodySelectorStateCopyWith<$Res> {
-  factory _$$HomeBodySelectorStateImplCopyWith(
-          _$HomeBodySelectorStateImpl value,
-          $Res Function(_$HomeBodySelectorStateImpl) then) =
-      __$$HomeBodySelectorStateImplCopyWithImpl<$Res>;
+abstract class _$$HomeViewStateImplCopyWith<$Res>
+    implements $HomeViewStateCopyWith<$Res> {
+  factory _$$HomeViewStateImplCopyWith(
+          _$HomeViewStateImpl value, $Res Function(_$HomeViewStateImpl) then) =
+      __$$HomeViewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<NavigationItem> navigationItems});
 }
 
 /// @nodoc
-class __$$HomeBodySelectorStateImplCopyWithImpl<$Res>
-    extends _$HomeBodySelectorStateCopyWithImpl<$Res,
-        _$HomeBodySelectorStateImpl>
-    implements _$$HomeBodySelectorStateImplCopyWith<$Res> {
-  __$$HomeBodySelectorStateImplCopyWithImpl(_$HomeBodySelectorStateImpl _value,
-      $Res Function(_$HomeBodySelectorStateImpl) _then)
+class __$$HomeViewStateImplCopyWithImpl<$Res>
+    extends _$HomeViewStateCopyWithImpl<$Res, _$HomeViewStateImpl>
+    implements _$$HomeViewStateImplCopyWith<$Res> {
+  __$$HomeViewStateImplCopyWithImpl(
+      _$HomeViewStateImpl _value, $Res Function(_$HomeViewStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1595,7 +1590,7 @@ class __$$HomeBodySelectorStateImplCopyWithImpl<$Res>
   $Res call({
     Object? navigationItems = null,
   }) {
-    return _then(_$HomeBodySelectorStateImpl(
+    return _then(_$HomeViewStateImpl(
       navigationItems: null == navigationItems
           ? _value._navigationItems
           : navigationItems // ignore: cast_nullable_to_non_nullable
@@ -1606,8 +1601,8 @@ class __$$HomeBodySelectorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeBodySelectorStateImpl implements _HomeBodySelectorState {
-  const _$HomeBodySelectorStateImpl(
+class _$HomeViewStateImpl implements _HomeViewState {
+  const _$HomeViewStateImpl(
       {required final List<NavigationItem> navigationItems})
       : _navigationItems = navigationItems;
 
@@ -1621,14 +1616,14 @@ class _$HomeBodySelectorStateImpl implements _HomeBodySelectorState {
 
   @override
   String toString() {
-    return 'HomeBodySelectorState(navigationItems: $navigationItems)';
+    return 'HomeViewState(navigationItems: $navigationItems)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeBodySelectorStateImpl &&
+            other is _$HomeViewStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._navigationItems, _navigationItems));
   }
@@ -1640,22 +1635,21 @@ class _$HomeBodySelectorStateImpl implements _HomeBodySelectorState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeBodySelectorStateImplCopyWith<_$HomeBodySelectorStateImpl>
-      get copyWith => __$$HomeBodySelectorStateImplCopyWithImpl<
-          _$HomeBodySelectorStateImpl>(this, _$identity);
+  _$$HomeViewStateImplCopyWith<_$HomeViewStateImpl> get copyWith =>
+      __$$HomeViewStateImplCopyWithImpl<_$HomeViewStateImpl>(this, _$identity);
 }
 
-abstract class _HomeBodySelectorState implements HomeBodySelectorState {
-  const factory _HomeBodySelectorState(
+abstract class _HomeViewState implements HomeViewState {
+  const factory _HomeViewState(
           {required final List<NavigationItem> navigationItems}) =
-      _$HomeBodySelectorStateImpl;
+      _$HomeViewStateImpl;
 
   @override
   List<NavigationItem> get navigationItems;
   @override
   @JsonKey(ignore: true)
-  _$$HomeBodySelectorStateImplCopyWith<_$HomeBodySelectorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$HomeViewStateImplCopyWith<_$HomeViewStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -4,7 +4,7 @@ import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../common/function.dart';
+import '../../common/function.dart';
 
 class VpnContainer extends StatefulWidget {
   final Widget child;

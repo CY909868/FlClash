@@ -79,21 +79,22 @@ class UpdateNavigationsSelector with _$UpdateNavigationsSelector {
 }
 
 @freezed
-class HomeSelectorState with _$HomeSelectorState {
-  const factory HomeSelectorState({
+class HomeState with _$HomeState {
+  const factory HomeState({
     required String currentLabel,
     required List<NavigationItem> navigationItems,
     required ViewMode viewMode,
     required String? locale,
-  }) = _HomeSelectorState;
+  }) = _HomeState;
 }
 
 @freezed
-class HomeBodySelectorState with _$HomeBodySelectorState {
-  const factory HomeBodySelectorState({
+class HomeViewState with _$HomeViewState {
+  const factory HomeViewState({
     required List<NavigationItem> navigationItems,
-  }) = _HomeBodySelectorState;
+  }) = _HomeViewState;
 }
+
 
 @freezed
 class ProxiesCardSelectorState with _$ProxiesCardSelectorState {

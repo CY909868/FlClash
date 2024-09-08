@@ -5,7 +5,7 @@ import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../common/function.dart';
+import '../../common/function.dart';
 
 class ClashContainer extends StatefulWidget {
   final Widget child;
@@ -24,8 +24,8 @@ class _ClashContainerState extends State<ClashContainer>
   Function? updateClashConfigDebounce;
 
   Widget _updateContainer(Widget child) {
-    return Selector2<Config,ClashConfig, ClashConfigState>(
-      selector: (_,config, clashConfig) => ClashConfigState(
+    return Selector2<Config, ClashConfig, ClashConfigState>(
+      selector: (_, config, clashConfig) => ClashConfigState(
         overrideDns: config.overrideDns,
         mixedPort: clashConfig.mixedPort,
         allowLan: clashConfig.allowLan,
@@ -45,14 +45,16 @@ class _ClashContainerState extends State<ClashContainer>
         rules: clashConfig.rules,
         globalRealUa: clashConfig.globalRealUa,
       ),
-      builder: (__, state, child) {
-        if (updateClashConfigDebounce == null) {
-          updateClashConfigDebounce = debounce<Function()>(() async {
+      shouldRebuild: (prev, next) {
+        if (prev != next) {
+          updateClashConfigDebounce ??= debounce<Function()>(() async {
             await globalState.appController.updateClashConfig();
           });
-        } else {
           updateClashConfigDebounce!();
         }
+        return prev != next;
+      },
+      builder: (__, state, child) {
         return child!;
       },
       child: child,
