@@ -4003,3 +4003,152 @@ abstract class _ClashConfigState implements ClashConfigState {
   _$$ClashConfigStateImplCopyWith<_$ClashConfigStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$ThemeState {
+  String? get locale => throw _privateConstructorUsedError;
+  ScaleProps get scaleProps => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ThemeStateCopyWith<ThemeState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ThemeStateCopyWith<$Res> {
+  factory $ThemeStateCopyWith(
+          ThemeState value, $Res Function(ThemeState) then) =
+      _$ThemeStateCopyWithImpl<$Res, ThemeState>;
+  @useResult
+  $Res call({String? locale, ScaleProps scaleProps});
+
+  $ScalePropsCopyWith<$Res> get scaleProps;
+}
+
+/// @nodoc
+class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
+    implements $ThemeStateCopyWith<$Res> {
+  _$ThemeStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = freezed,
+    Object? scaleProps = null,
+  }) {
+    return _then(_value.copyWith(
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      scaleProps: null == scaleProps
+          ? _value.scaleProps
+          : scaleProps // ignore: cast_nullable_to_non_nullable
+              as ScaleProps,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ScalePropsCopyWith<$Res> get scaleProps {
+    return $ScalePropsCopyWith<$Res>(_value.scaleProps, (value) {
+      return _then(_value.copyWith(scaleProps: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ThemeStateImplCopyWith<$Res>
+    implements $ThemeStateCopyWith<$Res> {
+  factory _$$ThemeStateImplCopyWith(
+          _$ThemeStateImpl value, $Res Function(_$ThemeStateImpl) then) =
+      __$$ThemeStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? locale, ScaleProps scaleProps});
+
+  @override
+  $ScalePropsCopyWith<$Res> get scaleProps;
+}
+
+/// @nodoc
+class __$$ThemeStateImplCopyWithImpl<$Res>
+    extends _$ThemeStateCopyWithImpl<$Res, _$ThemeStateImpl>
+    implements _$$ThemeStateImplCopyWith<$Res> {
+  __$$ThemeStateImplCopyWithImpl(
+      _$ThemeStateImpl _value, $Res Function(_$ThemeStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = freezed,
+    Object? scaleProps = null,
+  }) {
+    return _then(_$ThemeStateImpl(
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      scaleProps: null == scaleProps
+          ? _value.scaleProps
+          : scaleProps // ignore: cast_nullable_to_non_nullable
+              as ScaleProps,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ThemeStateImpl implements _ThemeState {
+  const _$ThemeStateImpl({required this.locale, required this.scaleProps});
+
+  @override
+  final String? locale;
+  @override
+  final ScaleProps scaleProps;
+
+  @override
+  String toString() {
+    return 'ThemeState(locale: $locale, scaleProps: $scaleProps)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ThemeStateImpl &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.scaleProps, scaleProps) ||
+                other.scaleProps == scaleProps));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale, scaleProps);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ThemeStateImplCopyWith<_$ThemeStateImpl> get copyWith =>
+      __$$ThemeStateImplCopyWithImpl<_$ThemeStateImpl>(this, _$identity);
+}
+
+abstract class _ThemeState implements ThemeState {
+  const factory _ThemeState(
+      {required final String? locale,
+      required final ScaleProps scaleProps}) = _$ThemeStateImpl;
+
+  @override
+  String? get locale;
+  @override
+  ScaleProps get scaleProps;
+  @override
+  @JsonKey(ignore: true)
+  _$$ThemeStateImplCopyWith<_$ThemeStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

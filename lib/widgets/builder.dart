@@ -65,3 +65,50 @@ class ProxiesActionsBuilder extends StatelessWidget {
     );
   }
 }
+
+class ThemeChangeBuilder extends StatelessWidget {
+  const ThemeChangeBuilder({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Selector<Config, ThemeState>(
+      selector: (_, config) => ThemeState(
+        locale: config.locale,
+        scaleProps: config.scaleProps,
+      ),
+      builder: (_, context, __) {
+
+      },
+    );
+  }
+}
+
+class CustomSelector<A, S> extends Selector0<S> {
+  CustomSelector({
+    super.key,
+    required super.builder,
+    required S Function(BuildContext, A) selector,
+    super.shouldRebuild,
+    super.child,
+  }) : super(
+          selector: (context) => selector(context, Provider.of(context)),
+        );
+}
+
+class CustomSelector2<A, B, S> extends Selector0<S> {
+  CustomSelector2({
+    super.key,
+    required super.builder,
+    required S Function(BuildContext, A, B) selector,
+    super.shouldRebuild,
+    super.child,
+  }) : super(
+          selector: (context) => selector(
+            context,
+            Provider.of(context),
+            Provider.of(context),
+          ),
+        );
+}
