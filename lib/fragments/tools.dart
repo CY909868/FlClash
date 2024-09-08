@@ -7,7 +7,6 @@ import 'package:fl_clash/fragments/application_setting.dart';
 import 'package:fl_clash/fragments/config/config.dart';
 import 'package:fl_clash/l10n/l10n.dart';
 import 'package:fl_clash/models/models.dart';
-import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -77,7 +76,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
     return generateSection(
       title: appLocalizations.settings,
       items: [
-        Selector<Config, String?>(
+        CustomSelector<Config, String?>(
           selector: (_, config) => config.locale,
           builder: (_, localeString, __) {
             final subTitle = localeString ?? appLocalizations.defaultText;
@@ -155,43 +154,38 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return Selector<Config, String?>(
-      selector: (_, config) => config.locale,
-      builder: (_, __, ___) {
-        final items = [
-          Selector<AppState, MoreToolsSelectorState>(
-            selector: (_, appState) {
-              return MoreToolsSelectorState(
-                navigationItems: appState.viewMode == ViewMode.mobile
-                    ? appState.navigationItems.where(
-                        (element) {
-                          return element.modes
-                              .contains(NavigationItemMode.more);
-                        },
-                      ).toList()
-                    : [],
-              );
-            },
-            builder: (_, state, __) {
-              if (state.navigationItems.isEmpty) {
-                return Container();
-              }
-              return Column(
-                children: [
-                  ListHeader(title: appLocalizations.more),
-                  _buildNavigationMenu(state.navigationItems)
-                ],
-              );
-            },
-          ),
-          ..._getSettingList(),
-          ..._getOtherList(),
-        ];
-        return ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (_, index) => items[index],
-        );
-      },
+    final items = [
+      CustomSelector<AppState, MoreToolsSelectorState>(
+        selector: (_, appState) {
+          return MoreToolsSelectorState(
+            navigationItems: appState.viewMode == ViewMode.mobile
+                ? appState.navigationItems.where(
+                  (element) {
+                return element.modes
+                    .contains(NavigationItemMode.more);
+              },
+            ).toList()
+                : [],
+          );
+        },
+        builder: (_, state, __) {
+          if (state.navigationItems.isEmpty) {
+            return Container();
+          }
+          return Column(
+            children: [
+              ListHeader(title: appLocalizations.more),
+              _buildNavigationMenu(state.navigationItems)
+            ],
+          );
+        },
+      ),
+      ..._getSettingList(),
+      ..._getOtherList(),
+    ];
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (_, index) => items[index],
     );
   }
 }
