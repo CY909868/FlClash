@@ -4,10 +4,10 @@ import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AppStateContainer extends StatelessWidget {
+class AppStateManager extends StatelessWidget {
   final Widget child;
 
-  const AppStateContainer({
+  const AppStateManager({
     super.key,
     required this.child,
   });

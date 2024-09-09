@@ -1,27 +1,23 @@
-import 'dart:io';
-
 import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:tray_manager/tray_manager.dart';
 
-class TrayContainer extends StatefulWidget {
+class TrayManager extends StatefulWidget {
   final Widget child;
 
-  const TrayContainer({
+  const TrayManager({
     super.key,
     required this.child,
   });
 
   @override
-  State<TrayContainer> createState() => _TrayContainerState();
+  State<TrayManager> createState() => _TrayContainerState();
 }
 
-class _TrayContainerState extends State<TrayContainer> with TrayListener {
+class _TrayContainerState extends State<TrayManager> with TrayListener {
 
   @override
   void initState() {

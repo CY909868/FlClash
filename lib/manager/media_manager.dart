@@ -4,10 +4,10 @@ import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class MediaContainer extends StatelessWidget {
+class MediaManager extends StatelessWidget {
   final Widget child;
 
-  const MediaContainer({
+  const MediaManager({
     super.key,
     required this.child,
   });

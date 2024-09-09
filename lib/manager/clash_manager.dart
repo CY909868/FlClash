@@ -7,19 +7,19 @@ import 'package:provider/provider.dart';
 
 import '../../common/function.dart';
 
-class ClashContainer extends StatefulWidget {
+class ClashManager extends StatefulWidget {
   final Widget child;
 
-  const ClashContainer({
+  const ClashManager({
     super.key,
     required this.child,
   });
 
   @override
-  State<ClashContainer> createState() => _ClashContainerState();
+  State<ClashManager> createState() => _ClashContainerState();
 }
 
-class _ClashContainerState extends State<ClashContainer>
+class _ClashContainerState extends State<ClashManager>
     with AppMessageListener {
   Function? updateClashConfigDebounce;
 

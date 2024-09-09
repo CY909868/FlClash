@@ -138,7 +138,7 @@ class ProxiesTabFragmentState extends State<ProxiesTabFragment>
         GroupNameKeyMap keyMap = {};
         final children = state.groupNames.map((groupName) {
           keyMap[groupName] = GlobalObjectKey(groupName);
-          return KeepContainer(
+          return KeepScope(
             child: ProxyGroupView(
               key: keyMap[groupName],
               groupName: groupName,

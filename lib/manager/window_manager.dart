@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/state.dart';
@@ -7,19 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:window_manager/window_manager.dart';
 
-class WindowContainer extends StatefulWidget {
+class WindowManager extends StatefulWidget {
   final Widget child;
 
-  const WindowContainer({
+  const WindowManager({
     super.key,
     required this.child,
   });
 
   @override
-  State<WindowContainer> createState() => _WindowContainerState();
+  State<WindowManager> createState() => _WindowContainerState();
 }
 
-class _WindowContainerState extends State<WindowContainer> with WindowListener {
+class _WindowContainerState extends State<WindowManager> with WindowListener {
   Function? updateLaunchDebounce;
 
   _autoLaunchContainer(Widget child) {

@@ -1,4 +1,5 @@
 import 'package:fl_clash/common/common.dart';
+import 'package:fl_clash/widgets/keep_scope.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/state.dart';
 import 'package:flutter/material.dart';
@@ -128,7 +129,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopContainer(
+    return BackScope(
       child: LayoutBuilder(
         builder: (_, container) {
           final appController = globalState.appController;
@@ -191,7 +192,7 @@ class HomePage extends StatelessWidget {
                   itemCount: navigationItems.length,
                   itemBuilder: (_, index) {
                     final navigationItem = navigationItems[index];
-                    return KeepContainer(
+                    return KeepScope(
                       keep: navigationItem.keep,
                       key: Key(navigationItem.label),
                       child: navigationItem.fragment,

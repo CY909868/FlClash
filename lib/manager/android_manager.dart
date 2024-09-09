@@ -5,19 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-class AndroidContainer extends StatefulWidget {
+class AndroidManager extends StatefulWidget {
   final Widget child;
 
-  const AndroidContainer({
+  const AndroidManager({
     super.key,
     required this.child,
   });
 
   @override
-  State<AndroidContainer> createState() => _AndroidContainerState();
+  State<AndroidManager> createState() => _AndroidContainerState();
 }
 
-class _AndroidContainerState extends State<AndroidContainer>
+class _AndroidContainerState extends State<AndroidManager>
     with WidgetsBindingObserver {
   Widget _excludeContainer(Widget child) {
     return Selector<Config, bool>(
