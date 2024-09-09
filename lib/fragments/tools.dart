@@ -76,7 +76,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
     return generateSection(
       title: appLocalizations.settings,
       items: [
-        CustomSelector<Config, String?>(
+        Selector<Config, String?>(
           selector: (_, config) => config.locale,
           builder: (_, localeString, __) {
             final subTitle = localeString ?? appLocalizations.defaultText;
@@ -155,7 +155,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
   @override
   Widget build(BuildContext context) {
     final items = [
-      CustomSelector<AppState, MoreToolsSelectorState>(
+      Selector<AppState, MoreToolsSelectorState>(
         selector: (_, appState) {
           return MoreToolsSelectorState(
             navigationItems: appState.viewMode == ViewMode.mobile

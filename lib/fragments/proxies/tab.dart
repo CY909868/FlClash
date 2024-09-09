@@ -309,26 +309,28 @@ class ProxyGroupViewState extends State<ProxyGroupView> {
           },
           child: Align(
             alignment: Alignment.topCenter,
-            child: GridView.builder(
-              controller: _controller,
-              padding: const EdgeInsets.all(16),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: columns,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                mainAxisExtent: getItemHeight(proxyCardType),
+            child: ScaleBuilder(
+              builder: (_) => GridView.builder(
+                controller: _controller,
+                padding: const EdgeInsets.all(16),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: columns,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  mainAxisExtent: getItemHeight(proxyCardType),
+                ),
+                itemCount: sortedProxies.length,
+                itemBuilder: (_, index) {
+                  final proxy = sortedProxies[index];
+                  return ProxyCard(
+                    groupType: state.groupType,
+                    type: proxyCardType,
+                    key: ValueKey('$groupName.${proxy.name}'),
+                    proxy: proxy,
+                    groupName: groupName,
+                  );
+                },
               ),
-              itemCount: sortedProxies.length,
-              itemBuilder: (_, index) {
-                final proxy = sortedProxies[index];
-                return ProxyCard(
-                  groupType: state.groupType,
-                  type: proxyCardType,
-                  key: ValueKey('$groupName.${proxy.name}'),
-                  proxy: proxy,
-                  groupName: groupName,
-                );
-              },
             ),
           ),
         );

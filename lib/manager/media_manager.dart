@@ -17,9 +17,13 @@ class MediaManager extends StatelessWidget {
     return Selector<Config, ScaleProps>(
       selector: (_, config) => config.scaleProps,
       builder: (_, props, child) {
+        final textScaleFactor =
+            WidgetsBinding.instance.platformDispatcher.textScaleFactor;
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(
-            textScaler: props.custom ? TextScaler.linear(props.scale) : null,
+            textScaler: props.custom
+                ? TextScaler.linear(props.scale * textScaleFactor)
+                : null,
           ),
           child: Builder(
             builder: (context) {
