@@ -100,12 +100,18 @@ class Other {
     }
   }
 
-  String getTrayIconPath() {
-    if (Platform.isWindows) {
-      return "assets/images/icon.ico";
-    } else {
-      return "assets/images/icon_monochrome.png";
+  String getTrayIconPath({
+    required bool isStart,
+    required Brightness brightness,
+  }) {
+    final suffix = Platform.isWindows ? "ico" : "png";
+    if (isStart) {
+      return "assets/images/icon.$suffix";
     }
+    return switch (brightness) {
+      Brightness.dark => "assets/images/icon_white.$suffix",
+      Brightness.light => "assets/images/icon_black.$suffix",
+    };
   }
 
   int compareVersions(String version1, String version2) {

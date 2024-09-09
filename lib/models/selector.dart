@@ -59,15 +59,16 @@ class ApplicationSelectorState with _$ApplicationSelectorState {
 }
 
 @freezed
-class TrayContainerSelectorState with _$TrayContainerSelectorState {
-  const factory TrayContainerSelectorState({
+class TrayState with _$TrayState {
+  const factory TrayState({
     required Mode mode,
     required bool autoLaunch,
     required bool systemProxy,
     required bool tunEnable,
     required bool isStart,
     required String? locale,
-  }) = _TrayContainerSelectorState;
+    required Brightness? brightness,
+  }) = _TrayState;
 }
 
 @freezed

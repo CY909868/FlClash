@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:collection/collection.dart';
 import 'package:fl_clash/common/common.dart';
@@ -38,6 +39,7 @@ class AppState with ChangeNotifier {
   num _checkIpNum;
   List<ExternalProvider> _providers;
   List<Package> _packages;
+  Brightness? _brightness;
 
   AppState({
     required Mode mode,
@@ -54,6 +56,7 @@ class AppState with ChangeNotifier {
         _checkIpNum = 0,
         _requests = [],
         _mode = mode,
+        _brightness = null,
         _totalTraffic = Traffic(),
         _delayMap = {},
         _groups = [],
@@ -354,7 +357,7 @@ class AppState with ChangeNotifier {
   }
 
   setProvider(ExternalProvider? provider) {
-    if(provider == null) return;
+    if (provider == null) return;
     final index = _providers.indexWhere((item) => item.name == provider.name);
     if (index == -1) return;
     _providers = List.from(_providers)..[index] = provider;
@@ -365,5 +368,14 @@ class AppState with ChangeNotifier {
     final index =
         currentGroups.indexWhere((element) => element.name == groupName);
     return index != -1 ? currentGroups[index] : null;
+  }
+
+  Brightness? get brightness => _brightness;
+
+  set brightness(Brightness? value) {
+    if (_brightness != value) {
+      _brightness = value;
+      notifyListeners();
+    }
   }
 }

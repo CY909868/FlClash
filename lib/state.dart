@@ -33,7 +33,6 @@ class GlobalState {
   late AppController appController;
   GlobalKey<CommonScaffoldState> homeScaffoldKey = GlobalKey();
   List<Function> updateFunctionLists = [];
-  var isTrayInit = false;
 
   bool get isStart => startTime != null && startTime!.isBeforeNow;
 
@@ -196,22 +195,19 @@ class GlobalState {
     );
   }
 
-  _updateOtherTray() async {
-    if (isTrayInit == false) {
-      await trayManager.setIcon(
-        other.getTrayIconPath(),
-      );
-      await trayManager.setToolTip(
-        appName,
-      );
-      isTrayInit = true;
+  _updateTray({
+    required bool isStart,
+    required Brightness? brightness,
+  }) async {
+    if (Platform.isLinux) {
+      await trayManager.destroy();
     }
-  }
-
-  _updateLinuxTray() async {
-    await trayManager.destroy();
     await trayManager.setIcon(
-      other.getTrayIconPath(),
+      other.getTrayIconPath(
+        isStart: isStart,
+        brightness: brightness ??
+            WidgetsBinding.instance.platformDispatcher.platformBrightness,
+      ),
     );
     await trayManager.setToolTip(
       appName,
@@ -228,7 +224,10 @@ class GlobalState {
           WidgetsBinding.instance.platformDispatcher.locale,
     );
     if (!Platform.isLinux) {
-      _updateOtherTray();
+      _updateTray(
+        isStart: appState.isStart,
+        brightness: appState.brightness,
+      );
     }
     List<MenuItem> menuItems = [];
     final showMenuItem = MenuItem(
@@ -307,7 +306,10 @@ class GlobalState {
     menu.items = menuItems;
     trayManager.setContextMenu(menu);
     if (Platform.isLinux) {
-      _updateLinuxTray();
+      _updateTray(
+        isStart: appState.isStart,
+        brightness: appState.brightness,
+      );
     }
   }
 

@@ -957,25 +957,24 @@ abstract class _ApplicationSelectorState implements ApplicationSelectorState {
 }
 
 /// @nodoc
-mixin _$TrayContainerSelectorState {
+mixin _$TrayState {
   Mode get mode => throw _privateConstructorUsedError;
   bool get autoLaunch => throw _privateConstructorUsedError;
   bool get systemProxy => throw _privateConstructorUsedError;
   bool get tunEnable => throw _privateConstructorUsedError;
   bool get isStart => throw _privateConstructorUsedError;
   String? get locale => throw _privateConstructorUsedError;
+  Brightness? get brightness => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TrayContainerSelectorStateCopyWith<TrayContainerSelectorState>
-      get copyWith => throw _privateConstructorUsedError;
+  $TrayStateCopyWith<TrayState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TrayContainerSelectorStateCopyWith<$Res> {
-  factory $TrayContainerSelectorStateCopyWith(TrayContainerSelectorState value,
-          $Res Function(TrayContainerSelectorState) then) =
-      _$TrayContainerSelectorStateCopyWithImpl<$Res,
-          TrayContainerSelectorState>;
+abstract class $TrayStateCopyWith<$Res> {
+  factory $TrayStateCopyWith(TrayState value, $Res Function(TrayState) then) =
+      _$TrayStateCopyWithImpl<$Res, TrayState>;
   @useResult
   $Res call(
       {Mode mode,
@@ -983,14 +982,14 @@ abstract class $TrayContainerSelectorStateCopyWith<$Res> {
       bool systemProxy,
       bool tunEnable,
       bool isStart,
-      String? locale});
+      String? locale,
+      Brightness? brightness});
 }
 
 /// @nodoc
-class _$TrayContainerSelectorStateCopyWithImpl<$Res,
-        $Val extends TrayContainerSelectorState>
-    implements $TrayContainerSelectorStateCopyWith<$Res> {
-  _$TrayContainerSelectorStateCopyWithImpl(this._value, this._then);
+class _$TrayStateCopyWithImpl<$Res, $Val extends TrayState>
+    implements $TrayStateCopyWith<$Res> {
+  _$TrayStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1006,6 +1005,7 @@ class _$TrayContainerSelectorStateCopyWithImpl<$Res,
     Object? tunEnable = null,
     Object? isStart = null,
     Object? locale = freezed,
+    Object? brightness = freezed,
   }) {
     return _then(_value.copyWith(
       mode: null == mode
@@ -1032,17 +1032,20 @@ class _$TrayContainerSelectorStateCopyWithImpl<$Res,
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
+      brightness: freezed == brightness
+          ? _value.brightness
+          : brightness // ignore: cast_nullable_to_non_nullable
+              as Brightness?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$TrayContainerSelectorStateImplCopyWith<$Res>
-    implements $TrayContainerSelectorStateCopyWith<$Res> {
-  factory _$$TrayContainerSelectorStateImplCopyWith(
-          _$TrayContainerSelectorStateImpl value,
-          $Res Function(_$TrayContainerSelectorStateImpl) then) =
-      __$$TrayContainerSelectorStateImplCopyWithImpl<$Res>;
+abstract class _$$TrayStateImplCopyWith<$Res>
+    implements $TrayStateCopyWith<$Res> {
+  factory _$$TrayStateImplCopyWith(
+          _$TrayStateImpl value, $Res Function(_$TrayStateImpl) then) =
+      __$$TrayStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1051,17 +1054,16 @@ abstract class _$$TrayContainerSelectorStateImplCopyWith<$Res>
       bool systemProxy,
       bool tunEnable,
       bool isStart,
-      String? locale});
+      String? locale,
+      Brightness? brightness});
 }
 
 /// @nodoc
-class __$$TrayContainerSelectorStateImplCopyWithImpl<$Res>
-    extends _$TrayContainerSelectorStateCopyWithImpl<$Res,
-        _$TrayContainerSelectorStateImpl>
-    implements _$$TrayContainerSelectorStateImplCopyWith<$Res> {
-  __$$TrayContainerSelectorStateImplCopyWithImpl(
-      _$TrayContainerSelectorStateImpl _value,
-      $Res Function(_$TrayContainerSelectorStateImpl) _then)
+class __$$TrayStateImplCopyWithImpl<$Res>
+    extends _$TrayStateCopyWithImpl<$Res, _$TrayStateImpl>
+    implements _$$TrayStateImplCopyWith<$Res> {
+  __$$TrayStateImplCopyWithImpl(
+      _$TrayStateImpl _value, $Res Function(_$TrayStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1073,8 +1075,9 @@ class __$$TrayContainerSelectorStateImplCopyWithImpl<$Res>
     Object? tunEnable = null,
     Object? isStart = null,
     Object? locale = freezed,
+    Object? brightness = freezed,
   }) {
-    return _then(_$TrayContainerSelectorStateImpl(
+    return _then(_$TrayStateImpl(
       mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
@@ -1099,20 +1102,25 @@ class __$$TrayContainerSelectorStateImplCopyWithImpl<$Res>
           ? _value.locale
           : locale // ignore: cast_nullable_to_non_nullable
               as String?,
+      brightness: freezed == brightness
+          ? _value.brightness
+          : brightness // ignore: cast_nullable_to_non_nullable
+              as Brightness?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$TrayContainerSelectorStateImpl implements _TrayContainerSelectorState {
-  const _$TrayContainerSelectorStateImpl(
+class _$TrayStateImpl implements _TrayState {
+  const _$TrayStateImpl(
       {required this.mode,
       required this.autoLaunch,
       required this.systemProxy,
       required this.tunEnable,
       required this.isStart,
-      required this.locale});
+      required this.locale,
+      required this.brightness});
 
   @override
   final Mode mode;
@@ -1126,17 +1134,19 @@ class _$TrayContainerSelectorStateImpl implements _TrayContainerSelectorState {
   final bool isStart;
   @override
   final String? locale;
+  @override
+  final Brightness? brightness;
 
   @override
   String toString() {
-    return 'TrayContainerSelectorState(mode: $mode, autoLaunch: $autoLaunch, systemProxy: $systemProxy, tunEnable: $tunEnable, isStart: $isStart, locale: $locale)';
+    return 'TrayState(mode: $mode, autoLaunch: $autoLaunch, systemProxy: $systemProxy, tunEnable: $tunEnable, isStart: $isStart, locale: $locale, brightness: $brightness)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TrayContainerSelectorStateImpl &&
+            other is _$TrayStateImpl &&
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.autoLaunch, autoLaunch) ||
                 other.autoLaunch == autoLaunch) &&
@@ -1145,30 +1155,31 @@ class _$TrayContainerSelectorStateImpl implements _TrayContainerSelectorState {
             (identical(other.tunEnable, tunEnable) ||
                 other.tunEnable == tunEnable) &&
             (identical(other.isStart, isStart) || other.isStart == isStart) &&
-            (identical(other.locale, locale) || other.locale == locale));
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.brightness, brightness) ||
+                other.brightness == brightness));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, mode, autoLaunch, systemProxy, tunEnable, isStart, locale);
+  int get hashCode => Object.hash(runtimeType, mode, autoLaunch, systemProxy,
+      tunEnable, isStart, locale, brightness);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TrayContainerSelectorStateImplCopyWith<_$TrayContainerSelectorStateImpl>
-      get copyWith => __$$TrayContainerSelectorStateImplCopyWithImpl<
-          _$TrayContainerSelectorStateImpl>(this, _$identity);
+  _$$TrayStateImplCopyWith<_$TrayStateImpl> get copyWith =>
+      __$$TrayStateImplCopyWithImpl<_$TrayStateImpl>(this, _$identity);
 }
 
-abstract class _TrayContainerSelectorState
-    implements TrayContainerSelectorState {
-  const factory _TrayContainerSelectorState(
+abstract class _TrayState implements TrayState {
+  const factory _TrayState(
       {required final Mode mode,
       required final bool autoLaunch,
       required final bool systemProxy,
       required final bool tunEnable,
       required final bool isStart,
-      required final String? locale}) = _$TrayContainerSelectorStateImpl;
+      required final String? locale,
+      required final Brightness? brightness}) = _$TrayStateImpl;
 
   @override
   Mode get mode;
@@ -1183,9 +1194,11 @@ abstract class _TrayContainerSelectorState
   @override
   String? get locale;
   @override
+  Brightness? get brightness;
+  @override
   @JsonKey(ignore: true)
-  _$$TrayContainerSelectorStateImplCopyWith<_$TrayContainerSelectorStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$TrayStateImplCopyWith<_$TrayStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
