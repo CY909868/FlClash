@@ -7,6 +7,8 @@ import 'package:fl_clash/plugins/service.dart';
 import 'package:fl_clash/plugins/vpn.dart';
 import 'package:fl_clash/widgets/scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hotkey_manager/hotkey_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:tray_manager/tray_manager.dart';
@@ -311,6 +313,14 @@ class GlobalState {
         brightness: appState.brightness,
       );
     }
+  }
+
+  updateHotsKey() {
+    HotKey(
+      key: PhysicalKeyboardKey.keyQ,
+      modifiers: [HotKeyModifier.alt],
+      scope: HotKeyScope.system,
+    );
   }
 
   changeProxy({

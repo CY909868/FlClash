@@ -5,14 +5,40 @@ import 'package:fl_clash/fragments/about.dart';
 import 'package:fl_clash/fragments/access.dart';
 import 'package:fl_clash/fragments/application_setting.dart';
 import 'package:fl_clash/fragments/config/config.dart';
+import 'package:fl_clash/fragments/hotkey.dart';
 import 'package:fl_clash/l10n/l10n.dart';
 import 'package:fl_clash/models/models.dart';
+import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import '../widgets/widgets.dart';
 import 'backup_and_recovery.dart';
 import 'theme.dart';
+import 'package:path/path.dart' show dirname, join;
+
+class UWPLoopbackUtil extends StatelessWidget {
+  const UWPLoopbackUtil({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Selector<Config, bool>(
+      selector: (_, config) => config.onlyProxy,
+      builder: (_, onlyProxy, __) {
+        return ListItem(
+          leading: const Icon(Icons.lock),
+          title: Text(appLocalizations.loopback),
+          subtitle: Text(appLocalizations.loopbackDesc),
+          onTap: () {
+            windows?.runas(
+              '"${join(dirname(Platform.resolvedExecutable), "EnableLoopback.exe")}"',
+              "",
+            );
+          },
+        );
+      },
+    );
+  }
+}
 
 class ToolsFragment extends StatefulWidget {
   const ToolsFragment({super.key});
@@ -87,10 +113,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
               subtitle: Text(Intl.message(subTitle)),
               delegate: OptionsDelegate(
                 title: appLocalizations.language,
-                options: [
-                  null,
-                  ...AppLocalizations.delegate.supportedLocales
-                ],
+                options: [null, ...AppLocalizations.delegate.supportedLocales],
                 onChanged: (Locale? value) {
                   final config = context.read<Config>();
                   config.locale = value?.toString();
@@ -120,6 +143,17 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
             widget: const BackupAndRecovery(),
           ),
         ),
+        if (Platform.isWindows) const UWPLoopbackUtil(),
+        if (system.isDesktop)
+          ListItem.open(
+            leading: const Icon(Icons.keyboard),
+            title: const Text("热键管理"),
+            subtitle: const Text("使用键盘快捷键控制应用程序"),
+            delegate: OpenDelegate(
+              title: "热键管理",
+              widget: const HotKeyFragment(),
+            ),
+          ),
         if (Platform.isAndroid)
           ListItem.open(
             leading: const Icon(Icons.view_list),
@@ -160,11 +194,10 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
           return MoreToolsSelectorState(
             navigationItems: appState.viewMode == ViewMode.mobile
                 ? appState.navigationItems.where(
-                  (element) {
-                return element.modes
-                    .contains(NavigationItemMode.more);
-              },
-            ).toList()
+                    (element) {
+                      return element.modes.contains(NavigationItemMode.more);
+                    },
+                  ).toList()
                 : [],
           );
         },
@@ -186,6 +219,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (_, index) => items[index],
+      padding: const EdgeInsets.only(bottom: 20),
     );
   }
 }
