@@ -76,5 +76,5 @@ double getScrollToSelectedOffset({
   );
   final selectedIndex = findSelectedIndex != -1 ? findSelectedIndex : 0;
   final rows = (selectedIndex / columns).floor();
-  return max(rows * (getItemHeight(proxyCardType) + 8) - 8, 0);
+  return rows * getItemHeight(proxyCardType) + (rows - 1)  * 8;
 }
