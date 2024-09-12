@@ -143,7 +143,6 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
             widget: const BackupAndRecovery(),
           ),
         ),
-        if (Platform.isWindows) const UWPLoopbackUtil(),
         if (system.isDesktop)
           ListItem.open(
             leading: const Icon(Icons.keyboard),
@@ -154,6 +153,7 @@ class _ToolboxFragmentState extends State<ToolsFragment> {
               widget: const HotKeyFragment(),
             ),
           ),
+        if (Platform.isWindows) const UWPLoopbackUtil(),
         if (Platform.isAndroid)
           ListItem.open(
             leading: const Icon(Icons.view_list),

@@ -1,20 +1,12 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:collection/collection.dart';
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:flutter/material.dart';
-import 'connection.dart';
+import 'common.dart';
 import 'ffi.dart';
-import 'log.dart';
-import 'navigation.dart';
-import 'package.dart';
 import 'profile.dart';
-import 'proxy.dart';
-import 'system_color_scheme.dart';
-import 'traffic.dart';
-import 'version.dart';
 
 typedef DelayMap = Map<String, int?>;
 
